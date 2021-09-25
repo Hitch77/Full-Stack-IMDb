@@ -1,4 +1,9 @@
-node_modules
+node_modules/
 bundle.js*
 bundle.js.map
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
 /public/assets
+
