@@ -9,7 +9,13 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+    <% if current_user %>
+    <script>window.currentUser = {
+    "id": <%=current_user.id%>
+    }</script>
+    <%end%>
+  
   <body>
-    <%= yield %>
+    <%=yield%>
   </body>
 </html>

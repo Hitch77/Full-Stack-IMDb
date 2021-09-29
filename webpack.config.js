@@ -15,6 +15,14 @@ module.exports = {
                 options: {
                     presets: ['@babel/env', '@babel/react']
                 }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
             }
         ]
     },
@@ -23,3 +31,4 @@ module.exports = {
         extensions: ['.js', '.jsx', '*'],
     }
 };
+
