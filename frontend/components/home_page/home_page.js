@@ -20,6 +20,7 @@ class HomePage extends React.Component {
                 <NavBarContainer/>
             </header>
                 <div><img className="movie-ad" src={MovieAd} /></div>
+                <div className="index-subtitle">Featured Movies</div>
             <div id="movie-index">{this.props.movies.map(movie => (
                 <MovieItem movie={movie}/>
             ))}
