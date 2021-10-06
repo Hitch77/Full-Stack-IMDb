@@ -14,7 +14,16 @@
     "id": <%=current_user.id%>
     }</script>
     <%end%>
-  
+    <script>
+    window.logo = "<%=image_url("imdblogo.png")%>"
+    </script>
+    <script>
+    window.movieAd = "<%=image_url("movieAd.png")%>"
+    </script>
+    <script>
+    window.movieAd2 = "<%=image_url("movieAd2.png")%>"
+    </script>
+
   <body>
     <%=yield%>
   </body>

@@ -7,13 +7,21 @@
 .logout-button:hover {
     background-color: gray
 }
+.delete-review-button:hover {
+    background-color: gray
+}
+.user-review-form-button:hover {
+    background-color: gray
+}
 
 .sign-in-button,
 .sign-up-button,
-.logout-button {
+.logout-button,
+.delete-review-button,
+.user-review-form-button {
     font-size: 14px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    color: white;
+    color: #e8e8e8;
     cursor: pointer;
     letter-spacing: .05em;
     background-color: Transparent;

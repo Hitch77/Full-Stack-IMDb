@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
-import MovieAd2 from './movieAd2.jpeg'
+import MovieAd2 from '../../../app/assets/images/movieAd2.png'
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class MovieShow extends React.Component {
     constructor(props){
@@ -10,7 +11,9 @@ class MovieShow extends React.Component {
 
     componentDidMount() {
         console.log(this.props)
+        this.props.fetchReviews(this.props.match.params.movieId)
         this.props.fetchMovie(this.props.match.params.movieId);
+        this.props.fetchCelebs()
     }
 
     render() {
@@ -31,12 +34,22 @@ class MovieShow extends React.Component {
                     </div>
                     <div className="movie-show-container-mid">
                         <div className="storyline">{movie.description}</div>
-                        <div className="director">Director</div>
-                        <div className="writers">Writers</div>
-                        <div className="stars">Stars</div>
+                            <div className="director"> Director {this.props.celebs.map((celeb, i) => {
+                                if (celeb.id === movie.director_id)
+                                    return <div key={i}>{celeb.name}</div>
+                            })}</div>
+                            <div className="writers">Writer {this.props.celebs.map((celeb, i) => {
+                                if (celeb.id === movie.writer_id)
+                                    return <div key={i}>{celeb.name}</div>
+                            })}</div>
+                            <div className="stars">Starring {this.props.celebs.map((celeb, i) => {
+                                if (celeb.id === movie.actor_id)
+                                    return <div key={i}>{celeb.name}</div>
+                            })}</div>
                     </div>
                     </div>
                 </div>
+                <ReviewIndexContainer user={this.props.user} movie={movie}/>
             </div>
         );
     }

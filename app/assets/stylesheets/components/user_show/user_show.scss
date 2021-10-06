@@ -1,0 +1,52 @@
+.user-show-page {
+    padding: 14px 18px !important;
+    background-color: #E8E8E8;
+    position: absolute;
+    top: 52px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.user-show-profile-header {
+    color: black;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    // position: relative;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-bottom: 4px;
+}
+
+.user-show-profile-header:after {
+    content: " ";
+    display: block;
+    margin-top: 2px;
+    width: 3.15em;
+    height: .2em;
+    background-color: #f5c518;
+    border-radius: 10px;
+}
+
+.user-show-reviews-header {
+    color:#505050;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    // position: relative;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-bottom: 4px;
+    float: left;
+}
+
+.user-show-reviews-header:after{
+  content: " ";
+  display: block;
+  margin-top: 2px;
+  width: 6.5em;
+  height: .2em;
+  background-color: #f5c518;
+  border-radius: 10px;
+}
+

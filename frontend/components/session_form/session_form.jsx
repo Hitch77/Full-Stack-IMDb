@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../nav_bar/imdblogo.png'
+import Logo from '../../../app/assets/images/imdblogo.png'
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);

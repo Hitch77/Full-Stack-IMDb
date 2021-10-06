@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './imdblogo.png'
+import Logo from '../../../app/assets/images/imdblogo.png'
 
 
 
@@ -24,7 +24,8 @@ const NavBar = ({ currentUser, logout}) => {
             </Link>
             <input className="search-bar" />
             <ul>
-                <li><button className="logout-button" onClick={logout}>Log Out</button></li>
+                <li><Link to={`/users/${currentUser.id}`} className="user-profile-nav"><button className="user-profile-button" type="button">My Profile</button></Link></li>
+                <li><Link to="/"><button className="logout-button" onClick={logout}>Log Out</button></Link></li>
             </ul>
         </nav>
     );

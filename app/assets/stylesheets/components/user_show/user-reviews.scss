@@ -1,0 +1,112 @@
+.user-reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap: 25px;
+    box-sizing: border-box;
+    // justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    // margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.user-review-item-container {
+        background-color: rgba(31, 31, 31, 1);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+            // justify-content: center;
+        // padding-top: 20px;
+        // padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        // margin-bottom: 20px;
+        overflow-y: scroll;
+        height: 300px;
+        justify-content: space-evenly;
+}
+
+.user-reviews {
+    // text-align: center;
+    // margin-top: 20px;
+    margin-bottom: 35px;
+    // background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    /* padding: 20px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 31%);
+    grid-gap: 25px;
+    box-sizing: border-box;
+    // justify-content: center;
+    // align-items: center;
+}
+
+.user-review-header {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.0125em;
+    line-height: 1.5rem;
+    text-transform: none;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: #e8e8e8;
+    letter-spacing: .05em;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    // padding-right: 16px;
+}
+
+.review-movie-title {
+    font-size: 26px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: #e8e8e8;
+    letter-spacing: .05em;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+}
+
+.user-review-heading {
+    float: left;
+}
+
+.user-review-rating {
+    float: right
+}
+
+.user-review-body {
+    font-size: 16px;
+    font-family: Roboto, Helvetica, Arial, sans-serif ;
+    color: #e8e8e8;
+    font-weight: 100;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    padding-top: 20px;
+}
+
+.delete-review-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    // width: 20px;
+}
+
+.user-review-form-button {
+    font-size: 20px;
+    float: right;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    color: #e8e8e8;
+}
