@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom'
 //     zIndex: 1
 // }
 
-const EditReviewForm = ({ review, movie }) => {
+const EditReviewForm = ({ review, movie, openModal }) => {
     const [isOpen, setIsOpen] = useState(false)
+    // console.log(review, "this is the review")
     return (
         <>
-            <button className="user-review-form-button" onClick={() => setIsOpen(true)}>&#9998;</button>
-            <EditReviewFormModal movie={movie} review={review} open={isOpen} onClose={() => setIsOpen(false)} />
+            <button className="user-review-form-button" onClick={() => openModal(review)}>&#9998;</button>
+            {/* <EditReviewFormModal movie={movie} review={review} open={isOpen} onClose={() => setIsOpen(false)} /> */}
         </>
     )
 }

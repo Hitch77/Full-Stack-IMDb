@@ -34,3 +34,11 @@ export const fetchUserReviews = userId => (
         url: `api/users/${userId}/reviews`,
     })
 )
+
+export const fetchAllReviews = (data) => (
+    $.ajax({
+        method: 'GET',
+        url: `api/reviews`,
+        data
+    })
+)

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import ReviewIndexContainer from '../reviews/review_index_container';
 
-class MovieShow extends React.Component {
+class CelebShow extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -24,4 +24,4 @@ class MovieShow extends React.Component {
     }
 }
 
-export default MovieShow;
+export default CelebShow;

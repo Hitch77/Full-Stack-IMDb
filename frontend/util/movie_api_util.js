@@ -11,3 +11,14 @@ export const fetchMovie = movieId => (
         url: `/api/movies/${movieId}/`
     })
 );
+
+export const movieSearch = query => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/movies/search/`,
+        data: {
+            query: query
+        }
+    })
+}
+

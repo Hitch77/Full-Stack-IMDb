@@ -25,10 +25,21 @@ const OVERLAY_STYLES = {
 class EditReviewFormModal extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.review
+        // console.log(this.props.review, "this is the review in the modal")
+            this.state = {
+                id: this.props.review.id,
+                heading: this.props.review.heading,
+                review: this.props.review.review
+            }
+        // console.log(this.props.review.heading)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.toggleSpoilers = this.toggleSpoilers.bind(this)
         this.updateRating = this.updateRating.bind(this)
+    }
+
+    componentDidMount(){
+        // this.setState(this.props.review)
+
     }
 
     update(field) {
@@ -51,13 +62,12 @@ class EditReviewFormModal extends React.Component {
         e.preventDefault()
         const review = Object.assign({}, this.state);
         this.props.updateReview(review).then(() =>
-            this.props.onClose()
-        )
+        this.props.closeModal())
     }
 
     render() {
         if (!this.props.open) return null
-
+        // console.log(this.props.review, "this is the review in the modal")
         return ReactDom.createPortal(
             <>
                 <div style={OVERLAY_STYLES} />
@@ -106,7 +116,7 @@ class EditReviewFormModal extends React.Component {
                                     No
                                 </label>
                             </label>
-                            <input className="post-review-button" type="submit" />
+                            <input className="post-review-button" type="submit"/>
                         </form>
                     </div>
                     {/* <button onClick={this.props.onClose}>Close Modal</button> */}
@@ -124,7 +134,7 @@ import { updateReview } from '../../actions/review_actions.js';
 import { fetchReview } from '../../actions/review_actions.js'
 
 const mapStateToProps = (state) => ({
-    reviews: Object.values(state.entities.reviews),
+    // reviews: Object.values(state.entities.reviews),
     user_id: state.session.id
 })
 

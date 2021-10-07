@@ -9,6 +9,7 @@ class UserShow extends React.Component {
 
     componentDidMount(){
         this.props.fetchMovies()
+        // this.props.fetchUserReviews(this.props.user.id)
     }
 
     render() {
@@ -21,6 +22,10 @@ class UserShow extends React.Component {
                 </header>
                 <div className="user-show-page">
                     <h1 className="user-show-profile-header"> Profile </h1>
+                    <div className="user-profile-info">
+                        <i className="far fa-user fa-5x"></i>
+                        <div className="profile-email">Email: {user.email}</div>
+                    </div>
                     <h1 className="user-show-reviews-header"> Your Reviews</h1>
                     <UserReviewIndexContainer/>
                 </div>

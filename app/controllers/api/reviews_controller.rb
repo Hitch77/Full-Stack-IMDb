@@ -5,6 +5,9 @@ class Api::ReviewsController < ApplicationController
             @reviews = Review.where(movie_id: params[:movie_id])
         elsif params[:user_id]
             @reviews = Review.where(user_id: params[:user_id])
+        else 
+            @reviews = Review.all
+            render :index
         end
     end
 

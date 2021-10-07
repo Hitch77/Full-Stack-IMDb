@@ -10,10 +10,10 @@ class HomePage extends React.Component {
 
     componentDidMount () {
         this.props.fetchMovies()
+        this.props.fetchAllReviews()
     }
 
     render (){
-
         return (
             <div>
             <header>
@@ -21,10 +21,15 @@ class HomePage extends React.Component {
             </header>
                 <div><img className="movie-ad" src={MovieAd} /></div>
                 <div className="index-subtitle">Featured Movies</div>
-            <div id="movie-index">{this.props.movies.map((movie, i) => (
-                <MovieItem movie={movie} key={i}/>
+                <div className="featured">{this.props.movies.map((movie, i) => (
+                    movie.year == '2021' ? <MovieItem movie={movie} reviews={this.props.reviews} key={i}/> : null
             ))}
             </div>
+                <div className="index-subtitle">Unreleased Movies</div>
+                <div className="unreleased">{this.props.movies.map((movie, i) => (
+                    movie.year == '2022' ? <MovieItem movie={movie} reviews={this.props.reviews} key={i} /> : null
+                ))}
+                </div>
             </div>
         
         )

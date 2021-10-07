@@ -14,11 +14,16 @@
     background-color: gray
 }
 
+.user-profile-button:hover {
+    background-color: gray
+}
+
 .sign-in-button,
 .sign-up-button,
 .logout-button,
 .delete-review-button,
-.user-review-form-button {
+.user-review-form-button,
+.user-profile-button {
     font-size: 14px;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     color: #e8e8e8;

@@ -19,6 +19,12 @@ export const removeReview = reviewId => ({
     reviewId
 });
 
+export const fetchAllReviews = () => dispatch => (
+    ReviewAPIUtil.fetchAllReviews().then(reviews => (
+        dispatch(receiveReviews(reviews))
+    ))
+);
+
 
 export const fetchReviews = (movieId) => dispatch => (
     ReviewAPIUtil.fetchReviews(movieId).then(reviews => (

@@ -1,12 +1,13 @@
 .user-reviews {
     display: grid;
     grid-template-columns: repeat(auto-fit, 300px);
+    align-items: center;
     grid-gap: 25px;
     box-sizing: border-box;
     // justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 900px;
     z-index: 5;
     // margin-top: 20px;
     margin-bottom: 35px;
@@ -34,7 +35,6 @@
     margin-bottom: 35px;
     // background-color: black;
     height: 100%;
-    width: 100%;
     z-index: 5;
     /* padding: 20px; */
     display: grid;

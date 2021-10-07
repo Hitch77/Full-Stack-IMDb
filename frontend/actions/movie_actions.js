@@ -22,3 +22,8 @@ export const fetchMovie = movieId => dispatch => (
     MovieAPIUtil.fetchMovie(movieId).then(movie => 
         dispatch(receiveMovie(movie)))
 );
+
+export const movieSearch = query => dispatch => (
+    MovieAPIUtil.movieSearch(query).then(movies => 
+        dispatch(receiveMovies(movies)))
+)

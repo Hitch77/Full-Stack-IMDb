@@ -11,12 +11,17 @@ class UserReviewItem extends React.Component {
     //     this.props.fetchMovies()
     // }
 
+    // feedback() {
+    //     console.log(this.props.review.heading)
+    // }
+
     render() {
         let spoilers
         if (this.props.review.spoilers) {
             spoilers =
                 <div className="spoilers-header">Warning: Spoilers</div>
         }
+        if (!this.props.review) return null
     return (
         <div>
             <div className="user-review-item-container">
@@ -33,7 +38,8 @@ class UserReviewItem extends React.Component {
                 <div>{this.props.review.spoilers}</div>
                 <div className="review-change-buttons">
                     <button className="delete-review-button" onClick={() => this.props.deleteReview(this.props.user.id, this.props.review.id)}>&#128465;</button>
-                    <EditReviewForm movie={this.props.movie} review={this.props.review} />
+                    <button onClick={this.feedback}>Button</button>
+                    <EditReviewForm movie={this.props.movie} review={this.props.review} openModal={this.props.openModal} closeModal={this.props.closeModal}/>
                 </div>
             </div>
         </div>

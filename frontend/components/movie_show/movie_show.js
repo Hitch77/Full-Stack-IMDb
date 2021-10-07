@@ -36,20 +36,20 @@ class MovieShow extends React.Component {
                         <div className="storyline">{movie.description}</div>
                             <div className="director"> Director {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.director_id)
-                                    return <div key={i}>{celeb.name}</div>
+                                    return <div key={i} className="celeb_id">{celeb.name}</div>
                             })}</div>
                             <div className="writers">Writer {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.writer_id)
-                                    return <div key={i}>{celeb.name}</div>
+                                    return <div key={i} className="celeb_id">{celeb.name}</div>
                             })}</div>
                             <div className="stars">Starring {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.actor_id)
-                                    return <div key={i}>{celeb.name}</div>
+                                    return <div key={i} className="celeb_id">{celeb.name}</div>
                             })}</div>
                     </div>
                     </div>
                 </div>
-                <ReviewIndexContainer user={this.props.user} movie={movie}/>
+                {movie.year == '2021' ? <ReviewIndexContainer user={this.props.user} movie={movie} /> : <div>No reviews yet, check back after its release</div>}
             </div>
         );
     }
