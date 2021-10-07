@@ -9,7 +9,7 @@ const NavBar = ({ currentUser, logout}) => {
     const sessionLinks = () => (
         <nav className="nav">
             <Link to={'/'} className="header-link">
-                <img className="Logo" src={Logo}/>
+                <img className="Logo" src={window.logo}/>
             </Link>
             <SearchContainer />
             <ul>
@@ -23,7 +23,7 @@ const NavBar = ({ currentUser, logout}) => {
     const logOut = () => (
         <nav className="nav">
             <Link to={'/'} className="header-link">
-                <img className="Logo" src={Logo} />
+                <img className="Logo" src={window.logo} />
             </Link>
             <SearchContainer/>
             <ul>

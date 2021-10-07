@@ -19,7 +19,7 @@ class HomePage extends React.Component {
             <header>
                 <NavBarContainer/>
             </header>
-                <div><img className="movie-ad" src={MovieAd} /></div>
+                <div><img className="movie-ad" src={window.movieAd} /></div>
                 <div className="index-subtitle">Featured Movies</div>
                 <div className="featured">{this.props.movies.map((movie, i) => (
                     movie.year == '2021' ? <MovieItem movie={movie} reviews={this.props.reviews} key={i}/> : null

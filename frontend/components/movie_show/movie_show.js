@@ -24,7 +24,7 @@ class MovieShow extends React.Component {
                 <header>
                     <NavBarContainer />
                 </header>
-                    <div><img className="movie-ad" src={MovieAd2} /></div>
+                    <div><img className="movie-ad" src={window.movieAd2} /></div>
                 <div className="movie-show-page">
                     <h1 className="movie-show-title">{movie.title}</h1>
                     <div color="#ffffff" className="movie-data">{movie.year} {movie.film_rating} {movie.duration}</div>
