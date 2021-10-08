@@ -297,6 +297,11 @@
     margin-bottom: 10px;
 }
 
+.demo-submit:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 0 0);
+}
+
+
 .session-submit {
     width: 100%!important;
     height: 31px;
@@ -424,8 +429,14 @@ ul.errors {
     line-height: 19px;
     font-family: Arial, sans-serif;
     margin-left: 2px;
+    display: flex;
+    flex-direction: column;
     // width: 270px;
     // height: 41px
+}
+
+ul.errors li {
+    display: block;
 }
 
 .error-header {

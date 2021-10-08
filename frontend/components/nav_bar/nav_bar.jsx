@@ -12,7 +12,7 @@ const NavBar = ({ currentUser, logout}) => {
                 <img className="Logo" src={window.logo}/>
             </Link>
             <SearchContainer />
-            <ul>
+            <ul className="buttonUL">
                 <li><a href="https://linkedin.com/in/hicham-elalam-06117a128"><AiFillLinkedin className="linkedin"/></a></li>
                 <li><a href="https://github.com/Hitch77"><AiFillGithub className="github"/></a></li>
                 <li><Link to="/login" className="form-button"><button className="sign-in-button" type='button'>Sign In</button></Link></li>
