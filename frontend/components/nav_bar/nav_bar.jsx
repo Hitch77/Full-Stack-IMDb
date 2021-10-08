@@ -26,7 +26,7 @@ const NavBar = ({ currentUser, logout}) => {
                 <img className="Logo" src={window.logo} />
             </Link>
             <SearchContainer/>
-            <ul>
+            <ul className="buttonUL">
                 <li><a href="https://linkedin.com/in/hicham-elalam-06117a128"><AiFillLinkedin className="linkedin" /></a></li>
                 <li><a href="https://github.com/Hitch77"><AiFillGithub className="github" /></a></li>
                 <li><Link to={`/users/${currentUser.id}`} className="user-profile-nav"><button className="user-profile-button" type="button">My Profile</button></Link></li>
