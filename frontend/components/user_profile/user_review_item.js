@@ -38,7 +38,6 @@ class UserReviewItem extends React.Component {
                 <div>{this.props.review.spoilers}</div>
                 <div className="review-change-buttons">
                     <button className="delete-review-button" onClick={() => this.props.deleteReview(this.props.user.id, this.props.review.id)}>&#128465;</button>
-                    <button onClick={this.feedback}>Button</button>
                     <EditReviewForm movie={this.props.movie} review={this.props.review} openModal={this.props.openModal} closeModal={this.props.closeModal}/>
                 </div>
             </div>
