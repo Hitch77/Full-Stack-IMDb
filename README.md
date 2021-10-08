@@ -4,6 +4,8 @@ This is a Rails-React clone of the current IMDb. Here you can view revelant info
 
 ## Live site
 
+![Screen Shot 2021-10-08 at 2 08 45 PM](https://user-images.githubusercontent.com/86999349/136602965-eb55c4bc-c75d-4bab-a385-4f51bddd3f1f.png)
+
 Check it out: [Live Site](https://eyemdbee.herokuapp.com/#/)
 
 ## Technologies
