@@ -26,8 +26,20 @@ class MovieItem extends React.Component {
         let total = movieRatings.reduce((a, b) => a + b, 0)
         let avg = total / movieRatings.length
         avg = Math.round(avg * 10) / 10
-        if (!avg) return (<><div className="splash-rating">Not yet rated</div><div className="splash-question">Seen it?<Link className="splash-link" to={`/movies/${this.props.movie.id}`}>Write a review</Link></div></>)
-        return (<><div className="splash-rating"><span className="star">★ </span>{avg} / 10</div><div className="splash-question">Seen it?<Link className="splash-link" to={`/movies/${this.props.movie.id}`}>Write a review</Link></div></>)
+        if (!avg) return (<><div className="splash-rating">Not yet rated</div>
+                            <div className="splash-question">
+                                Seen it?
+                                <Link className="splash-link" to={`/movies/${this.props.movie.id}`}>Write a review</Link>
+                            </div>
+                            </>)
+        return (<>
+                <div className="splash-rating">
+                    <span className="star">★ </span>
+                    {avg} / 10</div>
+                    <div className="splash-question">Seen it?
+                    <Link className="splash-link" to={`/movies/${this.props.movie.id}`}>Write a review</Link>
+                    </div>
+                    </>)
     }
     
 

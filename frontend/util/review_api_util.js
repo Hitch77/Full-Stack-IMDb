@@ -1,9 +1,4 @@
-export const fetchReviews = movieId => (
-    $.ajax({
-        method: 'GET',
-        url: `api/movies/${movieId}/reviews`,
-    })
-)
+
 
 export const createReview = (review, movieId) => (
     $.ajax({
@@ -25,6 +20,13 @@ export const deleteReview = (userId, reviewId) => (
     $.ajax({
         url: `/api/users/${userId}/reviews/${reviewId}/`,
         method: 'DELETE'
+    })
+)
+
+export const fetchReviews = movieId => (
+    $.ajax({
+        method: 'GET',
+        url: `api/movies/${movieId}/reviews`,
     })
 )
 
