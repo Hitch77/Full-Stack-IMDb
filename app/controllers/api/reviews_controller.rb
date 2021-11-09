@@ -21,12 +21,12 @@ class Api::ReviewsController < ApplicationController
     # end
 
     def create
-        @review = Review.create!(review_params)
+        @review = Review.new(review_params)
         @review.user_id = current_user.id
         if @review.save
             render :show
         else
-            render json: ["Header can't be blank", "Review can't be blank"], status: 422
+            render json: @review.errors.full_messages, status: 422
         end
     end
 

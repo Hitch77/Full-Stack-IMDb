@@ -9,16 +9,25 @@ class CelebShow extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        this.props.fetchCeleb(this.props.match.params.celebId)
     }
 
     render() {
-        if (!this.props.movie) return null
+        if (!this.props.celeb) return null
         return (
-            <div>
+            <div className="celeb-show">
                 <header>
                     <NavBarContainer />
                 </header>
+                <div className="celeb-info-container">
+                <img src={this.props.celeb.photoUrl} className='celeb-show-image'/>
+                <div className="celeb-name">{this.props.celeb.name}</div>
+                <ul className="celeb-info-list">
+                    <li>{this.props.celeb.birthdate}</li>
+                    <li>{this.props.celeb.birthplace}</li>
+                </ul>
+                <div className="celeb-bio">{this.props.celeb.bio}</div>
+                </div>
             </div>
         );
     }

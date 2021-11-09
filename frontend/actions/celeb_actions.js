@@ -4,7 +4,7 @@ export const RECEIVE_CELEBS = 'RECEIVE_CELEBS';
 export const RECEIVE_CELEB = 'RECEIVE_CELEB';
 
 const receiveCeleb = celeb => ({
-    type: RECEIVE_MOVIE,
+    type: RECEIVE_CELEB,
     celeb
 });
 

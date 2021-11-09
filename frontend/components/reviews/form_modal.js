@@ -36,6 +36,7 @@ class ReviewFormModal extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.toggleSpoilers = this.toggleSpoilers.bind(this)
         this.updateRating = this.updateRating.bind(this)
+        this.modalClose = this.modalClose.bind(this)
     }
 
     update(field) {
@@ -67,15 +68,49 @@ class ReviewFormModal extends React.Component {
                 })})
     }
 
+    renderErrors() {
+        return (
+            <div>
+            <h1 className="error-header">There was a problem</h1>
+            <ul className="errors">
+                {this.props.errors.map((error, i) => (
+                    <div>
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                    </div>
+                ))}
+            </ul>
+            </div>
+        );
+    }
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+    modalClose() {
+        this.props.onClose()
+        this.props.clearErrors()
+        this.setState({            
+            heading: '',
+            review: '',
+            rating: 0,
+            spoilers: true,
+            movie_id: this.props.movie.id,
+            user_id: this.props.user_id})
+        
+    }
+
     render() {
+    const errorfunc = (this.props.errors.length > 0) ? this.renderErrors() : null
     if (!this.props.open) return null
 
     return ReactDom.createPortal(
         <>
-        <div style={OVERLAY_STYLES} />
+        <div style={OVERLAY_STYLES} onClick={this.modalClose}/>
         <div style={MODAL_STYLES} className="review-form-container">
                 <div className="review-form">
                     <h1 className="review-form-header">Write A Review</h1>
+                    {errorfunc}
                     <form onSubmit={this.handleSubmit} className="review-form-box">
                         <div className="rating-stars"><ReactStars
                             count={10}
@@ -132,15 +167,17 @@ class ReviewFormModal extends React.Component {
 
 import { connect } from 'react-redux';
 
-import { createReview } from '../../actions/review_actions.js';
+import { createReview, clearErrors } from '../../actions/review_actions.js';
 
 const mapStateToProps = (state) => ({
     reviews: Object.values(state.entities.reviews),
-    user_id: state.session.id
+    user_id: state.session.id,
+    errors: state.errors.reviews
 })
 
 const mapDispatchToProps = dispatch => ({
-    createReview: (review) => dispatch(createReview(review))
+    createReview: (review) => dispatch(createReview(review)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(

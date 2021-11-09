@@ -20,7 +20,6 @@ class Search extends React.Component {
     }
 
     handleSubmit(e){
-        e.preventDefault()
         this.props.movieSearch(this.state.title).then((movies) =>
         this.renderSearch(movies))
     }

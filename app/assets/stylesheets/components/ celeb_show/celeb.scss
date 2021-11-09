@@ -1,0 +1,55 @@
+.celeb-show {
+    background-color: #1f1f1f;
+}
+
+.celeb-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    justify-content: space-around;
+}
+
+.celeb-show-image {
+    width: 25%;
+    height: 25%;
+    min-width: 200px;
+    min-height: 300px;
+    max-width: 500px;
+    max-height: 700px;
+}
+
+.celeb-name {
+    color: #e8e8e8;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.09125em;
+    line-height: 1.5rem;
+    text-transform: none;
+    padding: 10px;
+}
+
+.celeb-info-list {
+    color: #e8e8e8;
+    text-align: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.09125em;
+    line-height: 1.5rem;
+    text-transform: none;
+}
+
+.celeb-bio {
+    color: #e8e8e8;
+    text-align: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.05125em;
+    line-height: 1.5rem;
+    text-transform: none;
+    padding: 10px;;
+}
+

@@ -28,13 +28,16 @@ class EditReviewFormModal extends React.Component {
         // console.log(this.props.review, "this is the review in the modal")
             this.state = {
                 id: this.props.review.id,
+                rating: this.props.review.rating,
                 heading: this.props.review.heading,
-                review: this.props.review.review
+                review: this.props.review.review,
+                spoilers: this.props.review.spoilers
             }
         // console.log(this.props.review.heading)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.toggleSpoilers = this.toggleSpoilers.bind(this)
         this.updateRating = this.updateRating.bind(this)
+        this.modalClose = this.modalClose.bind(this)
     }
 
     componentDidMount(){
@@ -65,18 +68,45 @@ class EditReviewFormModal extends React.Component {
         this.props.closeModal())
     }
 
+    modalClose() {
+        this.props.closeModal()
+        this.props.clearErrors()
+        this.setState({            
+        })  
+    }
+
+    renderErrors() {
+        return (
+            <div>
+            <h1 className="error-header">There was a problem</h1>
+            <ul className="errors">
+                {this.props.errors.map((error, i) => (
+                    <div>
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                    </div>
+                ))}
+            </ul>
+            </div>
+        );
+    }
+
     render() {
+        const errorfunc = (this.props.errors.length > 0) ? this.renderErrors() : null
         if (!this.props.open) return null
         // console.log(this.props.review, "this is the review in the modal")
         return ReactDom.createPortal(
             <>
-                <div style={OVERLAY_STYLES} />
+                <div style={OVERLAY_STYLES} onClick={this.modalClose}/>
                 <div style={MODAL_STYLES} className="review-form-container">
                     <div className="review-form">
                         <h1 className="review-form-header">Write A Review</h1>
+                        {errorfunc}
                         <form onSubmit={this.handleSubmit} className="review-form-box">
                             <div className="rating-stars"><ReactStars
                                 count={10}
+                                value={this.state.rating}
                                 onChange={this.updateRating}
                                 size={24}
                                 activeColor="#ffd700"
@@ -130,16 +160,18 @@ class EditReviewFormModal extends React.Component {
 
 import { connect } from 'react-redux';
 
-import { updateReview } from '../../actions/review_actions.js';
+import { clearErrors, updateReview } from '../../actions/review_actions.js';
 import { fetchReview } from '../../actions/review_actions.js'
 
 const mapStateToProps = (state) => ({
     // reviews: Object.values(state.entities.reviews),
-    user_id: state.session.id
+    user_id: state.session.id,
+    errors: state.errors.reviews
 })
 
 const mapDispatchToProps = dispatch => ({
-    updateReview: (review) => dispatch(updateReview(review))
+    updateReview: (review) => dispatch(updateReview(review)),
+    clearErrors:() => dispatch(clearErrors())
 });
 
 export default connect(

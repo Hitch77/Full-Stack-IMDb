@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import ReactDOM from 'react-dom'
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import MovieAd2 from '../../../app/assets/images/movieAd2.png'
 import ReviewIndexContainer from '../reviews/review_index_container';
+import 'react-responsive-modal/styles.css'
+import { Modal } from 'react-responsive-modal';
+
 
 class MovieShow extends React.Component {
     constructor(props){
@@ -17,6 +21,7 @@ class MovieShow extends React.Component {
     }
 
     render() {
+
         if (!this.props.movie) return null
         const { movie } = this.props;
         return (
@@ -34,17 +39,18 @@ class MovieShow extends React.Component {
                     </div>
                     <div className="movie-show-container-mid">
                         <div className="storyline">{movie.description}</div>
-                            <div className="director"> Director {this.props.celebs.map((celeb, i) => {
+                            <div className="director"> Director   
+                            {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.director_id)
-                                    return <div key={i} className="celeb_id">{celeb.name}</div>
+                                    return <div><Link to={`/celebs/${celeb.id}`} className="celeb_id">{celeb.name}</Link></div>
                             })}</div>
                             <div className="writers">Writer {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.writer_id)
-                                    return <div key={i} className="celeb_id">{celeb.name}</div>
+                                    return <div><Link to={`/celebs/${celeb.id}`} className="celeb_id">{celeb.name}</Link></div>
                             })}</div>
                             <div className="stars">Starring {this.props.celebs.map((celeb, i) => {
                                 if (celeb.id === movie.actor_id)
-                                    return <div key={i} className="celeb_id">{celeb.name}</div>
+                                    return <div><Link to={`/celebs/${celeb.id}`} className="celeb_id">{celeb.name}</Link></div>
                             })}</div>
                     </div>
                     </div>

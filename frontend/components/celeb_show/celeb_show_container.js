@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import CelebShow from './celeb_show';
-import { fetchCeleb } from '../../actions/celeb_actions';
+import { fetchCeleb, fetchCelebs } from '../../actions/celeb_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        movie: state.entities.movies[ownProps.match.params.movieId]
+        celeb: state.entities.celebs[ownProps.match.params.celebId],
     }
 };
 const mapDispatchToProps = dispatch => ({
