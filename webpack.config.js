@@ -32,7 +32,7 @@ module.exports = {
 },
         ]
     },
-    devtool: 'source-map',
+    devtool: false,
     resolve: {
         extensions: ['.js', '.jsx', '*'],
     }
